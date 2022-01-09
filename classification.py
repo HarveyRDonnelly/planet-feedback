@@ -126,7 +126,10 @@ def predict_employed() -> str:
                'employed')
 
 
-def predict_variables()
+def predict_variables() -> None:
+    """
+    predicts variables for data set
+    """
     accuracy = [predict_employer(), predict_employed()]
     for g in accuracy:
         print(g)
