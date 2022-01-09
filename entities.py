@@ -109,10 +109,6 @@ class Employer:
             total += score
         self.pf_score = total / len(self.feedback_entries)
 
-    def to_json(self) -> object:
-        """ makes objects serializable """
-        return json.dumps(self, default=lambda o: o.__dict__,
-                          sort_keys=True, indent=4)
 
 class Employee:
     """

@@ -61,7 +61,15 @@ for employer in employers:
 employers_json = {}
 for employer in employers:
     name = employer.name
-    employers_json[name] = employer.to_json()
+    employers_json[name] = {'pf_score': employer.pf_score,
+                            'pay_score': employer.pay_score,
+                            'equality_score': employer.equality_score,
+                            'workload_score': employer.workload_score,
+                            'work_environment_score': employer.work_environment_score,
+                            'employees_score': employer.employees_score,
+                            'job_requirements_score': employer.job_requirements_score,
+                            'management_score': employer.management_score,
+                            'number_of_entries': len(employer.feedback_entries)}
 
 with open("output.json", "w") as outfile:
     json.dump(employers_json, outfile)
