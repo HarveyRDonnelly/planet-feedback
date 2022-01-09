@@ -57,8 +57,8 @@ for feedback in data:
         employers[name].management_score[1] += 1
 
 for employer in employers:
-    employer.find_pf_score()
-    employer.find_scores()
+    employers[employer].find_pf_score()
+    employers[employer].find_scores()
 
 employers_json = {}
 for employer in employers:
