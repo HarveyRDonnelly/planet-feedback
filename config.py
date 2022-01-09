@@ -50,7 +50,12 @@ employer_index = \
      'HSBC': 52, 'Bosch': 53,
      'Hdfc-Bank': 54, 'Barclays': 55, 'Honeywell': 56, 'Citi': 57, 'Dell-Technologies': 58}
 
+employed_index = {'Current Employee': 0, 'Former Employee': 1}
+employed_index_inverse = {0: 'Current Employee', 1: 'Former Employee'}
+
 employer_test = ([], [])
 employer_train = ([], [])
+employed_test = ([], [])
+employed_train = ([], [])
 c_vector = CountVectorizer()
 tfidf_transformer = TfidfTransformer()

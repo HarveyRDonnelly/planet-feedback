@@ -50,9 +50,10 @@ def create_employers_training() -> None:
     Initialises employer_train.csv and employer_test.csv
     """
     data = load_data()[0]
+    random.shuffle(data)
     i = 0
     for i in range(len(data) - 100):
-        _, content, name = get_vars(data, j)
+        _, content, name = get_vars(data, i)
         comp_id = config.employer_index[name]
         config.employer_train[0].append(content)
         config.employer_train[1].append(comp_id)
@@ -72,3 +73,30 @@ def get_vars(data: list, index: int) -> (dict, str, str):
     ind = name.index('/')
     name = name[:ind]
     return (data[index], data[index]['CompleteReview'], name)
+
+
+def create_employed_training() -> None:
+    """
+    Initializes data for employed or not training data
+    """
+    data = load_data()[0]
+    random.shuffle(data)
+    i = 0
+    for i in range(len(data) - 100):
+        content = data[i]['CompleteReview']
+        review_details = data[i]['ReviewDetails']
+        employed = 1
+        if 'Current Employee' in review_details:
+            employed = 0
+        config.employed_train[0].append(content)
+        config.employed_train[1].append(employed)
+
+    for j in range(i, len(data)):
+        content = data[j]['CompleteReview']
+        review_details = data[j]['ReviewDetails']
+        employed = 1
+        if 'Current Employee' in review_details:
+            employed = 0
+        config.employed_test[0].append(content)
+        config.employed_test[1].append(employed)
+
