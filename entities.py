@@ -93,13 +93,20 @@ class Employer:
 
     def find_scores(self) -> None:
         """ finds scores """
-        self.pay_score[2] = self.pay_score[0] / self.pay_score[1]
-        self.equality_score[2] = self.equality_score[0] / self.equality_score[1]
-        self.workload_score[2] = self.workload_score[0] / self.workload_score[1]
-        self.work_environment_score[2] = self.work_environment_score[0] / self.work_environment_score[1]
-        self.employees_score[2] = self.employees_score[0] / self.employees_score[1]
-        self.job_requirements_score[2] = self.job_requirements_score[0] / self.job_requirements_score[1]
-        self.management_score[2] = self.management_score[0] / self.management_score[1]
+        if self.pay_score[1] != 0:
+            self.pay_score[2] = self.pay_score[0] / self.pay_score[1]
+        if self.equality_score[1] != 0:
+            self.equality_score[2] = self.equality_score[0] / self.equality_score[1]
+        if self.workload_score[1] != 0:
+            self.workload_score[2] = self.workload_score[0] / self.workload_score[1]
+        if self.work_environment_score[1] != 0:
+            self.work_environment_score[2] = self.work_environment_score[0] / self.work_environment_score[1]
+        if self.employees_score[1] != 0:
+            self.employees_score[2] = self.employees_score[0] / self.employees_score[1]
+        if self.job_requirements_score[1] != 0:
+            self.job_requirements_score[2] = self.job_requirements_score[0] / self.job_requirements_score[1]
+        if self.management_score[1] != 0:
+            self.management_score[2] = self.management_score[0] / self.management_score[1]
 
     def find_pf_score(self) -> None:
         """ finds pf score for an employer """
