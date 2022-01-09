@@ -6,6 +6,7 @@ Source Path: config.py
 
 This file is Copyright (c) 2022 Harvey Ronan Donnelly and Ewan Robert Jordan.
 """
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
 review_type = {0: 'pay', 1: 'equality', 2: 'workload', 3: 'work environment',
                4: 'employees', 5: 'job requirements', 6: 'management'}
@@ -51,3 +52,5 @@ employer_index = \
 
 employer_test = ([], [])
 employer_train = ([], [])
+c_vector = CountVectorizer()
+tfidf_transformer = TfidfTransformer()
