@@ -62,7 +62,7 @@ for employer in employers:
 
 employers_json = {}
 for employer in employers:
-    name = employer.name
+    name = employers[employer].name
     employers_json[name] = {'pf_score': employers[employer].pf_score,
                             'pay_score': employers[employer].pay_score,
                             'equality_score': employers[employer].equality_score,
