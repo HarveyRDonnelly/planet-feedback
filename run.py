@@ -1,4 +1,11 @@
-""" initialize project """
+"""
+Planet Feedback: Intelligent Employer Profiling Platform
+
+Module Name: Run Project Module
+Source Path: run.py
+
+This file is Copyright (c) 2022 Harvey Ronan Donnelly and Ewan Robert Jordan.
+"""
 import uuid
 import data_loading
 import classification
