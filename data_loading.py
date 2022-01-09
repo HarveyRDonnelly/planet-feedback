@@ -17,7 +17,7 @@ def load_data() -> (list, list):
     """
     Loads raw data from datasets into Python object.
     """
-    f = open('data/poopcum.json')
+    f = open('data/results.json')
     data = json.load(f)
     # Closing file
     f.close()

@@ -73,5 +73,5 @@ for employer in employers:
                             'management_score': employers[employer].management_score,
                             'number_of_entries': len(employers[employer].feedback_entries)}
 
-with open("output.json", "w") as outfile:
+with open("data/output.json", "w") as outfile:
     json.dump(employers_json, outfile)
