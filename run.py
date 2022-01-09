@@ -1,10 +1,10 @@
 """ initialize project """
 import uuid
-
 import data_loading
 import classification
 import entities
 import sentiment_analysis
+import json
 
 employers = {}
 data, train = data_loading.load_data()
@@ -50,3 +50,11 @@ for feedback in data:
 for employer in employers:
     employer.find_pf_score()
     employer.find_scores()
+
+employers_json = {}
+for employer in employers:
+    name = employer.name
+    employers_json[name] = employer.to_json()
+
+with open("output.json", "w") as outfile:
+    json.dump(employers_json, outfile)
