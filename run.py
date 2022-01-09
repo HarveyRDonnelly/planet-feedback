@@ -19,7 +19,7 @@ classifier = classification.train_categories(train)
 total = 0
 for feedback in data:
     total += 1
-    print(str(total) + ' out of ' + len(data) + ' reviews analyzed.')
+    print(str(total) + ' out of ' + str(len(data)) + ' reviews analyzed.')
     content = feedback['CompleteReview']
     edited_URL = feedback['URL'].replace('https://in.indeed.com/cmp/', '')
     ind = edited_URL.index('/')
