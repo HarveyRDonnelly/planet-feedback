@@ -7,7 +7,7 @@ Source Path: entities.py
 This file is Copyright (c) 2022 Harvey Ronan Donnelly and Ewan Robert Jordan.
 """
 from __future__ import annotations
-
+import json
 import uuid
 from typing import Optional
 import classification
@@ -66,8 +66,8 @@ class Employer:
     """
     This class represents an employer.
     """
-    id = uuid.UUID
-    name = str
+    id: uuid.UUID
+    name: str
     feedback_entries: dict[uuid.UUID, FeedbackEntry]
     pf_score: float
     pay_score: list[float, float, float]
@@ -79,7 +79,7 @@ class Employer:
     management_score: list[float, float, float]
 
     def __init__(self, name) -> None:
-        self.id = uuid.UUID
+        self.id = uuid.uuid4()
         self.name = name
         self.feedback_entries = {}
         self.pf_score = 0

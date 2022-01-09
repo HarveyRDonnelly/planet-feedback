@@ -1,10 +1,17 @@
-""" initialize project """
-import uuid
+"""
+Planet Feedback: Intelligent Employer Profiling Platform
 
+Module Name: Run Project Module
+Source Path: run.py
+
+This file is Copyright (c) 2022 Harvey Ronan Donnelly and Ewan Robert Jordan.
+"""
+import uuid
 import data_loading
 import classification
 import entities
 import sentiment_analysis
+import json
 
 employers = {}
 data, train = data_loading.load_data()
@@ -50,3 +57,19 @@ for feedback in data:
 for employer in employers:
     employer.find_pf_score()
     employer.find_scores()
+
+employers_json = {}
+for employer in employers:
+    name = employer.name
+    employers_json[name] = {'pf_score': employer.pf_score,
+                            'pay_score': employer.pay_score,
+                            'equality_score': employer.equality_score,
+                            'workload_score': employer.workload_score,
+                            'work_environment_score': employer.work_environment_score,
+                            'employees_score': employer.employees_score,
+                            'job_requirements_score': employer.job_requirements_score,
+                            'management_score': employer.management_score,
+                            'number_of_entries': len(employer.feedback_entries)}
+
+with open("output.json", "w") as outfile:
+    json.dump(employers_json, outfile)
