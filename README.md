@@ -1,6 +1,7 @@
 ![alt text](graphics/logo.png)
 
 # Intelligent Employer Profiling Platform
+#### **Copyright © 2022 Harvey Ronan Donnelly and Ewan Robert Jordan.**
 
 ## Setup Instructions
 
@@ -30,3 +31,4 @@ This will be hosted locally on port 8888 by default. Visit `http://127.0.0.1:888
 available:
 
 ![alt text](graphics/visual_interface.png)
+#### **Copyright © 2022 Harvey Ronan Donnelly and Ewan Robert Jordan.**
